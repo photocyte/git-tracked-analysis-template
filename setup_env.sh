@@ -41,7 +41,7 @@ if [[ $RAMDISK == "YES" && "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 ## Create a local env
-conda create -y -p ./${ENV_NAME} 'python=3.9' ## Need 3.10 not 3.11 for certain dependencies
+conda create -y -p ./${ENV_NAME} 'python=3.11' ## Need 3.10 not 3.11 for certain dependencies
 conda activate ./${ENV_NAME}
 
 ## Add all the conda installable executable dependencies here
@@ -59,28 +59,29 @@ conda install -y -c conda-forge nodejs
 conda install -y -c conda-forge parallel
 conda install -y -c conda-forge argh
 conda install -y -c conda-forge simplejson
+conda install -y -c conda-forge libiconv ## An unstated dependency of needle/emboss
 
 conda install -y -c bioconda bedtools
 conda install -y -c bioconda igvtools
-conda install -y -c bioconda funannotate
 conda install -y -c bioconda bcftools
 conda install -y -c bioconda seqkit
-##conda install -y -c bioconda emboss
+conda install -y -c bioconda emboss
 conda install -y -c bioconda kalign2
 conda install -y -c bioconda 'gffutils>=0.12'
 conda install -y -c bioconda genometools-genometools
-conda install -y -c bioconda ucsc-axtchain
-conda install -y -c bioconda ucsc-blat
-conda install -y -c bioconda ucsc-chainmergesort
-conda install -y -c bioconda ucsc-chainnet
-conda install -y -c bioconda ucsc-chainsort
-conda install -y -c bioconda ucsc-chainsplit
-conda install -y -c bioconda ucsc-fasplit
-conda install -y -c bioconda ucsc-fatotwobit
-conda install -y -c bioconda ucsc-liftover
-conda install -y -c bioconda ucsc-liftup
-conda install -y -c bioconda ucsc-netchainsubset
-conda install -y -c bioconda ucsc-twobitinfo
+
+#conda install -y -c bioconda ucsc-axtchain
+#conda install -y -c bioconda ucsc-blat
+#conda install -y -c bioconda ucsc-chainmergesort
+#conda install -y -c bioconda ucsc-chainnet
+#conda install -y -c bioconda ucsc-chainsort
+#conda install -y -c bioconda ucsc-chainsplit
+#conda install -y -c bioconda ucsc-fasplit
+#conda install -y -c bioconda ucsc-fatotwobit
+#conda install -y -c bioconda ucsc-liftover
+#conda install -y -c bioconda ucsc-liftup
+#conda install -y -c bioconda ucsc-netchainsubset
+#conda install -y -c bioconda ucsc-twobitinfo
 
 ## Export the environment - see https://stackoverflow.com/questions/49174185/export-conda-environment-without-prefix-variable-which-shows-local-path-to-execu
 conda env export > conda_env.yaml
@@ -93,10 +94,8 @@ pip install git-archive-all
 #npm install g2p_mapper_cli
 
 ## Some weird library patches for kent tools
-cd conda_env_linux-64/lib/
-ln -s libssl.so.1.1 libssl.so.1.0.0
-ln -s libcrypto.so.1.1 libcrypto.so.1.0.0
-cd ../../
+#cd conda_env_linux-64/lib/
+#ln -s libssl.so.1.1 libssl.so.1.0.0
+#ln -s libcrypto.so.1.1 libcrypto.so.1.0.0
+#cd ../../
 
-module load singularitypro
-singularity pull docker://quay.io/biocontainers/medaka:1.11.3--py39h05d5c5e_0
