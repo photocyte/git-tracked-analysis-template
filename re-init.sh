@@ -2,6 +2,6 @@ echo "**Recommend renaming the parent folder from 'git-tracked-analysis-template
 rm -rf .git
 git init
 git add ./* .gitignore
-git reset HEAD ./re-init.sh
+git reset ./re-init.sh
 git commit -m "first commit"
-
+rm -f ./re-init.sh &
