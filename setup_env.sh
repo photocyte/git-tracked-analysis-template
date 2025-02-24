@@ -99,3 +99,9 @@ pip install git-archive-all
 #ln -s libcrypto.so.1.1 libcrypto.so.1.0.0
 #cd ../../
 
+## If adding dependencies via containers, follow this pattern:
+#mkdir -p containers
+#cd containers
+#apptainer pull docker://quay.io/biocontainers/agat:1.4.2--pl5321hdfd78af_0
+#cd ../
+  
