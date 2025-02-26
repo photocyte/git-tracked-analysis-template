@@ -1,6 +1,10 @@
 # git-tracked-analysis-template
 A bespoke template for spinning up a new folder that can be tracked with git and exported as a .zip to Zenodo
 
+* `input_files` Actual or symlinked files for the tracked analysis
+* `derived_files` Modified forms or otherwise subsets of the `input_files`
+* `bin` A place to stage downloaded scripts from `setup_env.sh`, or a place to commit bespoke scripts
+* `containers` A git untracked place to stage downloaded containers from `setup_env.sh`
 
 ## Other Research Data Management (RDM) resources 
 
