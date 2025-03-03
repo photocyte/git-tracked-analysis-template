@@ -61,6 +61,7 @@ conda install -y -c conda-forge argh
 conda install -y -c conda-forge simplejson
 conda install -y -c conda-forge libiconv ## An unstated dependency of needle/emboss
 
+conda install -y -c bioconda nextflow
 conda install -y -c bioconda bedtools
 conda install -y -c bioconda igvtools
 conda install -y -c bioconda bcftools
