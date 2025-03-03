@@ -45,7 +45,7 @@ conda create -y -p ./${ENV_NAME} 'python=3.11' ## Need 3.10 not 3.11 for certain
 conda activate ./${ENV_NAME}
 
 ## Add all the conda installable executable dependencies here
-conda install -y -c conda-forge rb-bio
+#conda install -y -c conda-forge rb-bio ## Probably installed to allow sequenceserver . IMO, just run sequenceserver via the docker container
 conda install -y -c conda-forge pip
 conda install -y -c conda-forge bash
 conda install -y -c conda-forge ipykernel ## Enables Visual Studio Code Juptyer notebook execution
@@ -55,7 +55,7 @@ conda install -y -c conda-forge pathvalidate
 conda install -y -c conda-forge natsort
 conda install -y -c conda-forge rdflib
 conda install -y -c conda-forge openpyxl
-conda install -y -c conda-forge nodejs
+#conda install -y -c conda-forge nodejs ## Typically, nodejs is not needed, so remove from default to lighten the install
 conda install -y -c conda-forge parallel
 conda install -y -c conda-forge argh
 conda install -y -c conda-forge simplejson
