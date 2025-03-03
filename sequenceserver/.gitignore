@@ -1,0 +1,15 @@
+*.makeblastdbstderr
+*.makeblastdbstdout
+*.pdb
+*.phd
+*.phi
+*.phr
+*.pin
+*.pjs
+*.pog
+*.pos
+*.pot
+*.psq
+*.ptf
+*.pto
+*.taxid_map.txt
