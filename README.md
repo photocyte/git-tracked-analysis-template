@@ -43,4 +43,7 @@ A bespoke template for spinning up a new folder that can be tracked with git and
 * [https://zenodo.org](https://zenodo.org)
 * [https://journals.plos.org/plosone/s/recommended-repositories#loc-omics](https://journals.plos.org/plosone/s/recommended-repositories#loc-omics)
 
-
+---
+### Notes
+* Try not to keep any symlinks in this template. If working with cloud filesystems / object stores, they have divergent support and need to be paid attention to.
+* Check for symlinks with `find . -type l`
