@@ -45,5 +45,5 @@ A bespoke template for spinning up a new folder that can be tracked with git and
 
 ---
 ### Notes
-* Try not to keep any symlinks in this template. If working with cloud filesystems / object stores, they have divergent support and need to be paid attention to.
+* Try not to keep any symlinks in this template. If working with cloud filesystems / object stores, they have divergent support and need to be paid attention to. But, feel free to use symlinks after the template has been initialized. They will be properly stored in `git` and in the `.zip` from `archive.sh`
 * Check for symlinks with `find . -type l`
