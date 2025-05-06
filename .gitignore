@@ -1,5 +1,13 @@
-## Bioinformaticsy type files
+## Conda environments
+conda_env_osx-64/
 conda_env_linux-64
+
+## Nextflow things
+work/
+.nextflow/
+.nextflow.lo*
+
+## Bioinformaticsy type files
 *.nhb
 *.fai
 *.makeblastdbstderr
