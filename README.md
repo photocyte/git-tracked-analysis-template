@@ -6,6 +6,14 @@ A bespoke template for spinning up a new folder that can be tracked with git and
 * `bin` A place to stage downloaded scripts from `setup_env.sh`, or a place to commit bespoke scripts
 * `containers` A git untracked place to stage downloaded containers from `setup_env.sh`
 
+## Quick start
+* `git clone` this repository
+* Rename the folder from `git-tracked-analysis-template` to something clear and descriptive, optionally with a date timestamp. e.g. `2023-10-06_PKS_domain_to_module_conversion_script`
+* Run `re-init.sh` to clean up and reinitialize the git tracking.
+* Run `setup_env.sh` to create a Conda environment that pre-installs the bioinformatics tools I most commonly use, and the dependencies for `archive.sh`
+* Iterate on your analysis code, figures, etc. Use git tracking along the way, and `git tag -a v1.1` of major and minor versions i.e. `v1.1` when significant stopping points for external sharing of the analysis are reached
+* Use `archive.sh` to pack the most recent commit of the analysis into a .zip, for manual uploading to Zenodo. Be sure to set the Zenodo version of the uploaded item to the git tagged version, thereby allowing for clear provenance traceability between the live git-tracked analysis and the snapshot on Zenodo.  
+
 ## Other Research Data Management (RDM) resources 
 
 ### File and folder organizing strategies and schemas
