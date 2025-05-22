@@ -18,7 +18,7 @@ A bespoke template for spinning up a new folder that can be tracked with git and
 
 ### File and folder organizing strategies and schemas
 * [https://www.projecttier.org/tier-protocol/protocol-4-0/](https://www.projecttier.org/tier-protocol/protocol-4-0/)
-* [https://handbook.datalad.org/basics/101-127-yoda](https://handbook.datalad.org/basics/101-127-yoda)
+* [https://handbook.datalad.org/en/latest/basics/101-127-yoda.html](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html)
 * [https://caltechlibrary.github.io/RDMworkbook/index.html#description](https://caltechlibrary.github.io/RDMworkbook/index.html#description)
 * [https://jakefeala.substack.com/i/160652737/folder-structure](https://jakefeala.substack.com/i/160652737/folder-structure)
 
