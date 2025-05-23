@@ -61,7 +61,7 @@ conda install -y -c conda-forge argh
 conda install -y -c conda-forge simplejson
 conda install -y -c conda-forge libiconv ## An unstated dependency of needle/emboss
 
-conda install -y -c bioconda 'nextflow>=24.10.4' ## Without the version pinning, installs a very old version.
+conda install -y -c bioconda 'nextflow>=25.04.2' ## Without the version pinning, installs a very old version.
 conda install -y -c bioconda bedtools
 conda install -y -c bioconda igvtools
 conda install -y -c bioconda bcftools
