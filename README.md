@@ -1,10 +1,18 @@
 # git-tracked-analysis-template
 A bespoke template for spinning up a new folder that can be tracked with git and exported as a .zip to Zenodo
 
-* `input_files` Actual or symlinked files for the tracked analysis
-* `derived_files` Modified forms or otherwise subsets of the `input_files`
+## Description of intended use
+* `input_files` Actual or symlinked files for the tracked analysis 
+  * Provenance tracking is implicit for "in-house" generated files, in the sense that the filename and/or checksum can be used to track down the original file on a given filesystem.
+  * If using symlinks, they'd relatively link to files outside the templated folder (this is for convenience to quickly iterate on multiple analyses on a single filesystem w/ multiple analyses in separate folders) 
+  * Ideally, everything in `input_files` should transition to `zenodo_items` once those upstream analyses that made the files are uploaded to Zenodo and assigned a DOI
+* `derived_files` Modified forms or otherwise subsets of the `input_files`. Generated using code within the template, i.e. `run.sh`
+* `zenodo_items` Actual files, within folders that are named with a manually modified form of a `doi:` URI, wherein the colon `:` and the internal slash `/` of the DOI identifier are replaced with double-dash `--` 
+  * This is used to manually track provenance of files that were sourced from existing Zenodo items.
+  * For the example folder `doi--10.5281--zenodo.10569208`, reversing the manually renaming produces `doi:10.5281/zenodo.10569208` , then `doi.org` can resolve it: https://doi.org/10.5281/zenodo.10569208 . The example file `EXAMPLE--KR_seqkit_replace_kv.2.0.tsv` is present in the .zip archive of [that linked Zenodo item](https://doi.org/10.5281/zenodo.10569208) (as `KR_seqkit_replace_kv.2.0.tsv`)
 * `bin` A place to stage downloaded scripts from `setup_env.sh`, or a place to commit bespoke scripts
 * `containers` A git untracked place to stage downloaded containers from `setup_env.sh`
+* `sequenceserver` A folder intended to store (in the contained  `./run.sh`) the slightly finicky parameters for easy Docker or Singularity execution of [SequenceServer](https://sequenceserver.com)
 
 ## Quick start
 * `git clone` this repository
@@ -54,5 +62,7 @@ A bespoke template for spinning up a new folder that can be tracked with git and
 
 ---
 ### Notes
-* Try not to keep any symlinks in this template. If working with cloud filesystems / object stores, they have divergent support and need to be paid attention to. But, feel free to use symlinks after the template has been initialized. They will be properly stored in `git` and in the `.zip` from `archive.sh`
+* Try not to keep any symlinks in this bare template. If working with cloud filesystems / object stores, they have divergent support and need to be paid attention to. But, feel free to use symlinks after the template has been initialized. They will be properly stored in `git` and in the `.zip` from `archive.sh`
 * Check for symlinks with `find . -type l`
+* The `zenodo_items` DOI renaming scheme, is admittedly a bit hackish. But, it is a lightweight way to track provenance of files copied from Zenodo items.
+* The `setup_env.sh` defining of the conda environment on individual lines, is admittedly a bit hackish compared to using .yaml definitions of the environment.
