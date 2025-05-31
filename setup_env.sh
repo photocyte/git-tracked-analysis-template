@@ -53,7 +53,7 @@ conda install -y -c conda-forge jupyter
 conda install -y -c conda-forge pandas
 conda install -y -c conda-forge pathvalidate
 conda install -y -c conda-forge natsort
-conda install -y -c conda-forge rdflib
+#conda install -y -c conda-forge rdflib
 conda install -y -c conda-forge openpyxl
 #conda install -y -c conda-forge nodejs ## Typically, nodejs is not needed, so remove from default to lighten the install
 conda install -y -c conda-forge parallel
